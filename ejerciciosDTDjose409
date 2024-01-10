@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE equipos_de_baloncesto [
+    <!ELEMENT equipos_de_baloncesto (equipo, equipo)>
+    <!ELEMENT equipo (nombre, ciudad, entrenador, jugadores)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT ciudad (#PCDATA)>
+    <!ELEMENT entrenador (#PCDATA)>
+    <!ELEMENT jugadores (jugador+)>
+    <!ELEMENT jugador (nombre ,nacionalidad)>
+    <!ATTLIST jugador posicion (Base|Escolta|Alero|Pivot) #REQUIRED>
+    <!ELEMENT nacionalidad (#PCDATA)>
+]>
+<equipos_de_baloncesto>
+    <equipo>
+        <nombre>Equipo A</nombre>
+        <ciudad>Madrid</ciudad>
+        <entrenador>Juan García</entrenador>
+        <jugadores>
+            <jugador posicion="Base">
+                <nombre>Carlos López</nombre>
+                <nacionalidad>Español</nacionalidad>
+            </jugador>
+            <jugador posicion="Alero">
+                <nombre>Marta Sánchez</nombre>
+                <nacionalidad>Argentino</nacionalidad>
+            </jugador>
+        </jugadores>
+    </equipo>
+
+    <equipo>
+        <nombre>Equipo B</nombre>
+        <ciudad>Barcelona</ciudad>
+        <entrenador>Luis Rodríguez</entrenador>
+        <jugadores>
+            <jugador posicion="Escolta">
+                <nombre>Pedro Martínez</nombre>
+                <nacionalidad>Mexicano</nacionalidad>
+            </jugador>
+            <jugador posicion="Pivot">
+                <nombre>Ana Gómez</nombre>
+                <nacionalidad>Italiana</nacionalidad>
+            </jugador>
+        </jugadores>
+    </equipo>
+</equipos_de_baloncesto>

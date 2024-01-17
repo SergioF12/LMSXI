@@ -1,0 +1,24 @@
+1//disco[@tecnoloxía='SCSI']
+2//máquina[config/IP='192.168.10.45']/config/OS
+3//procesador[@marca='AMD']/@*
+4//máquina[@nome='COPERNICO']/config
+5xxxxx
+6//máquina[hardware/memoria[@tecnoloxía='DDR2']='4']/hardware/fabricante
+7//máquina[hardware/procesador/@num_nucleos]/config/OS
+8//máquina[hardware/memoria/@tecnoloxía='DDR2']/@nome
+9//máquina[hardware/procesador/@marca='Intel' and hardware/gravadora/@tipo='DVD']
+10//máquina[config/gateway]/config
+11//máquina[starts-with(@nome, 'PC')]
+12//máquina[count(hardware/disco)>1]/@nome
+13xxxxx
+14sum(//disco[@tecnoloxía='SCSI']/@capacidade)
+15//máquina[hardware/memoria and not(hardware/memoria/@tecnoloxía)]/@nome
+16//máquina[contains(config/OS, 'Windows') and hardware/gravadora/@tipo='DVD']
+17 //máquina[not(config/OS)]
+18xxxxxx
+19//máquina[config/IP and not(config/gateway)]/config
+20//*[not(text())]
+21//config/IP[starts-with(., '192.168.10.')]
+22//máquina[hardware/procesador/@num_nucleos > 1 and hardware/memoria[number(.) <= 2]]/@nome
+23//máquina[sum(hardware/disco/@capacidade) > 1000]
+24//máquina[sum(hardware/disco/@capacidade) < 80]

@@ -1,0 +1,54 @@
+apartado 1
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:template match="/">
+  <html>
+  <body>
+    <xsl:apply-templates select="inventario/producto"/>
+  </body>
+  </html>
+</xsl:template>
+
+<xsl:template match="producto">
+  <xsl:text>Producto </xsl:text><xsl:value-of select="@codigo"/><br/>
+  <xsl:text>&#8226; Nombre: </xsl:text><xsl:value-of select="nombre"/><br/>
+  <xsl:text>&#8226; </xsl:text><xsl:value-of select="peso"/> <xsl:value-of select="peso/@unidad"/><br/>
+  <xsl:text>&#8226; </xsl:text><xsl:value-of select="precio"/><br/>
+  <xsl:text>&#8226; </xsl:text><xsl:value-of select="unidades"/><br/>
+  <br/>
+</xsl:template>
+
+</xsl:stylesheet>
+
+
+apartado 2
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:template match="/">
+  <html>
+  <body>
+    <table border="1">
+      <tr bgcolor="#b7fefc">
+        <th>Código</th>
+        <th>Peso</th>
+        <th>Precio</th>
+        <th>Unidades</th>
+      </tr>
+      <xsl:apply-templates select="inventario/producto"/>
+    </table>
+  </body>
+  </html>
+</xsl:template>
+
+<xsl:template match="producto">
+  <tr>
+    <td><xsl:value-of select="@codigo"/></td>
+    <td><xsl:value-of select="concat(peso, peso/@unidad)"/></td>
+    <td><xsl:value-of select="precio"/></td>
+    <td><xsl:value-of select="unidades"/></td>
+  </tr>
+</xsl:template>
+
+</xsl:stylesheet>

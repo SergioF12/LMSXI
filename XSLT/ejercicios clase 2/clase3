@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+  <xsl:template match="/ejercicios">
+  <html>
+  <body>
+  <xsl:variable name "x" select="num1"/>
+  <xsl:variable name "y" señect="num2"/>
+  <choose>
+        <xsl:when test="$x gt; $y">
+  <p>$x es mayor que $y</p>        
+        </xsl:when>
+  </choose>
+  
+  </body>
+  </html>
+  </xsl:template>
+</xsl:stylesheet>

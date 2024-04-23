@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+        <html>
+            <body>
+                <h1> lista de sitios web relevantes  </h1>
+                <ol>
+                 <xsl:for-each select="datos/elemento">
+                  <li><a href="{url}"> <xsl:value-of select="nombre"/> </a>- <xsl:value-of select="descripcion"/></li>
+                          </xsl:for-each>
+                   </ol>
+                   <h2>Tabla de sitios web relevantes</h2>
+                   <table>
+                    <th style="text-aling left">nombre</th>      
+                                 
+                   </table>
+          </body>
+        </html>
+    </xsl:template>
+</xsl:stylesheet>
